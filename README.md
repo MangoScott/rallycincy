@@ -4,9 +4,10 @@ One-page site for Let's Rally Cincy, a free weekly night tennis rally in Cincinn
 
 ## Files
 
-- **index.html** - The whole site: hero with the CSS rally animation, details strip, how it works, when & where, FAQ, and the join section
-- **styles.css** - Design system (shares its bones with sglasgow.com) plus the rally animation and responsive rules
-- **js/main.js** - Mobile menu, scroll reveals, and the hover/tap speed-up on the rally
+- **index.html** - The whole site: hero with the interactive rally, details strip, how it works, when & where, FAQ, and the join section
+- **styles.css** - Design system (shares its bones with sglasgow.com) plus the hero layout and responsive rules
+- **js/main.js** - Mobile menu and scroll reveals
+- **js/rally.js** - The hero game. A canvas rally that plays itself until you move your mouse onto the court and take the near racket (touch: tap to swing). The far racket chases the ball at a capped speed, so placement wins points. Tuning knobs (gravity, racket reach, opponent speed, shot depth) live at the top of `layout()` and in `hit()`. Draws a single still frame under `prefers-reduced-motion`.
 - **logo.svg** - The ball mark. **logo-wordmark.svg** - Mark plus wordmark for social bios, flyers, etc. **favicon.svg** - Mark on a night-sky tile
 - **favicon-32x32.png, apple-touch-icon.png, icon-192.png, icon-512.png, images/og-image.png** - Rendered from the SVGs and `tools/og-card.html` by `tools/render.js`
 - **site.webmanifest** - PWA manifest

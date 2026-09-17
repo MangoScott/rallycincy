@@ -132,61 +132,13 @@
                         </div>
                     </div>
 
-                    <!-- The rally animation. Decorative: everything inside is hidden from screen readers. -->
+                    <!-- The rally. Move your mouse onto the court to take the near racket;
+                         on touch, tap to swing. Decorative for assistive tech. -->
                     <div class="rally" id="rally" aria-hidden="true">
-                        <div class="floodlight"></div>
-                        <svg class="court" viewBox="0 0 100 100" preserveAspectRatio="none">
-                            <!-- Court floor and lines, drawn flat so the ball has a stage -->
-                            <line class="floor" x1="0" y1="80.5" x2="100" y2="80.5" />
-                            <line class="line" x1="0" y1="86" x2="100" y2="86" />
-                            <line class="line" x1="0" y1="92" x2="100" y2="92" />
-                            <line class="line" x1="8" y1="80.5" x2="4" y2="100" />
-                            <line class="line" x1="92" y1="80.5" x2="96" y2="100" />
-                            <line class="line" x1="28" y1="80.5" x2="26" y2="100" />
-                            <line class="line" x1="72" y1="80.5" x2="74" y2="100" />
-                            <!-- Net -->
-                            <line class="net" x1="50" y1="63" x2="50" y2="80.5" />
-                            <line class="net-post" x1="50" y1="62.5" x2="50" y2="64" />
-                        </svg>
-
-                        <svg class="racket left" viewBox="0 0 60 130" aria-hidden="true">
-                            <ellipse class="frame" cx="30" cy="34" rx="24" ry="32" />
-                            <g class="strings">
-                                <line x1="18" y1="10" x2="18" y2="60" /><line x1="30" y1="3" x2="30" y2="66" /><line x1="42" y1="10" x2="42" y2="60" />
-                                <line x1="8" y1="24" x2="52" y2="24" /><line x1="6" y1="36" x2="54" y2="36" /><line x1="8" y1="48" x2="52" y2="48" />
-                            </g>
-                            <line class="grip" x1="30" y1="66" x2="30" y2="124" />
-                        </svg>
-
-                        <svg class="racket right" viewBox="0 0 60 130" aria-hidden="true">
-                            <ellipse class="frame" cx="30" cy="34" rx="24" ry="32" />
-                            <g class="strings">
-                                <line x1="18" y1="10" x2="18" y2="60" /><line x1="30" y1="3" x2="30" y2="66" /><line x1="42" y1="10" x2="42" y2="60" />
-                                <line x1="8" y1="24" x2="52" y2="24" /><line x1="6" y1="36" x2="54" y2="36" /><line x1="8" y1="48" x2="52" y2="48" />
-                            </g>
-                            <line class="grip" x1="30" y1="66" x2="30" y2="124" />
-                        </svg>
-
-                        <div class="ball-shadow-x"><div class="ball-shadow"></div></div>
-                        <div class="ball-x">
-                            <div class="ball-y">
-                                <div class="ball-spin">
-                                    <svg viewBox="0 0 64 64">
-                                        <defs>
-                                            <radialGradient id="glow-ball" cx="36%" cy="32%" r="72%">
-                                                <stop offset="0" stop-color="#EAFF6B" />
-                                                <stop offset="0.6" stop-color="#D9F441" />
-                                                <stop offset="1" stop-color="#A9C41E" />
-                                            </radialGradient>
-                                        </defs>
-                                        <circle cx="32" cy="32" r="28" fill="url(#glow-ball)" />
-                                        <path d="M10.5 18.5 C 25 26, 25 38, 10.5 45.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" />
-                                        <path d="M53.5 18.5 C 39 26, 39 38, 53.5 45.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="rally-hint"><span class="mouse">Hover to pick up the pace</span><span class="touch">Tap to pick up the pace</span></div>
+                        <canvas id="rally-canvas"></canvas>
+                        <div class="rally-score" id="rally-score">Rally 0</div>
+                        <div class="rally-msg" id="rally-msg"></div>
+                        <div class="rally-hint" id="rally-hint">Move your mouse onto the court to play</div>
                     </div>
                 </div>
             </div>
@@ -375,6 +327,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/rally.js"></script>
 </body>
 
 </html>
