@@ -56,32 +56,6 @@
     for (var j = 0; j < items.length; j++) observer.observe(items[j]);
 })();
 
-// The rally: hover or tap the court to pick up the pace
-(function () {
-    var rally = document.getElementById("rally");
-    if (!rally) return;
-    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) return;
-
-    var hint = rally.querySelector(".rally-hint");
-    var timer = null;
-
-    function fast(on) {
-        rally.classList.toggle("fast", on);
-        if (on && hint) hint.style.opacity = "0";
-    }
-
-    rally.addEventListener("mouseenter", function () { fast(true); });
-    rally.addEventListener("mouseleave", function () { fast(false); });
-
-    // On touch there is no hover, so a tap gives a few seconds of fast play
-    rally.addEventListener("touchstart", function () {
-        fast(true);
-        clearTimeout(timer);
-        timer = setTimeout(function () { fast(false); }, 4000);
-    }, { passive: true });
-})();
-
 // Footer year
 (function () {
     var y = document.getElementById("year");
