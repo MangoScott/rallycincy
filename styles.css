@@ -1,0 +1,1178 @@
+/* Let's Rally Cincy - design system
+   Shares its bones with sglasgow.com: Inter, near-white canvas, near-black
+   type, pill buttons, flat surface cards. Tennis brings the colour. */
+:root {
+    --bg-color: #fafafa;
+    --text-color: #1a1a1a;
+    --text-muted: #666;
+    --surface-color: #f0f0f0;
+    --border-color: rgba(0, 0, 0, 0.1);
+
+    /* Optic yellow is the ball. Court green carries small text accents,
+       where the yellow would not read against the canvas. */
+    --ball: #D9F441;
+    --ball-deep: #A9C41E;
+    --accent-color: #1E8A55;
+    --night: #0F172A;
+    --night-2: #1B2540;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ---- Header ---- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(250, 250, 250, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: var(--text-color);
+    position: relative;
+    z-index: 10001;
+}
+
+.logo img,
+.logo svg {
+    width: 30px;
+    height: 30px;
+    flex: none;
+}
+
+.logo .logo-cincy {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+.nav-links .btn {
+    padding: 10px 20px;
+    font-size: 0.875rem;
+}
+
+.nav-links .btn:hover {
+    opacity: 1;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    position: relative;
+    z-index: 10001;
+}
+
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-color);
+    margin: 5px 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+/* ---- Typography ---- */
+h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+}
+
+h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+p {
+    color: var(--text-muted);
+    max-width: 700px;
+    margin-bottom: 16px;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-bottom: 24px;
+}
+
+.eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: var(--accent-color);
+}
+
+/* ---- Buttons ---- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+.btn-primary,
+.btn-primary:hover {
+    background: var(--text-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+}
+
+.btn-outline:hover {
+    background: var(--text-color);
+    color: white;
+}
+
+/* The ball-coloured button: dark type on optic yellow */
+.btn-ball,
+.btn-ball:hover {
+    background: var(--ball);
+    color: var(--text-color);
+}
+
+.btn-ball:hover {
+    background: #e4fa5f;
+    transform: translateY(-2px);
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+/* ---- Sections ---- */
+section {
+    padding: 100px 0;
+    scroll-margin-top: 88px;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+}
+
+.section-head h2 {
+    margin-bottom: 0;
+}
+
+.section-link {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ---- Hero ---- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 72px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    text-wrap: balance;
+}
+
+.hero-text h1 .hl {
+    /* Highlighter stroke in ball yellow under the key phrase */
+    background: linear-gradient(transparent 62%, var(--ball) 62%, var(--ball) 92%, transparent 92%);
+    padding: 0 0.06em;
+    margin: 0 -0.06em;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    max-width: 520px;
+    text-wrap: pretty;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.hero-meta {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.hero-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-meta span::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ball);
+    box-shadow: 0 0 0 3px rgba(217, 244, 65, 0.3);
+}
+
+/* ---- The rally: a ball traded back and forth over a net, forever ----
+   Pure CSS. One 5.2s cycle: left racket hits at 0%, the ball arcs over
+   the net, lands on the right at 50%, right racket returns it. */
+.rally {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-height: 560px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.court {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+}
+
+.court line,
+.court rect {
+    /* The viewBox is stretched to fit, so strokes are sized in screen pixels */
+    vector-effect: non-scaling-stroke;
+}
+
+.court .line {
+    stroke: currentColor;
+    stroke-width: 1.5px;
+    opacity: 0.14;
+    fill: none;
+}
+
+.court .net {
+    stroke: currentColor;
+    stroke-width: 2px;
+    opacity: 0.35;
+    stroke-dasharray: 3 4;
+}
+
+.court .net-post {
+    stroke: currentColor;
+    stroke-width: 3px;
+    stroke-linecap: round;
+    opacity: 0.6;
+}
+
+.court .floor {
+    stroke: currentColor;
+    stroke-width: 2.5px;
+    opacity: 0.6;
+}
+
+/* Floodlight cone: a soft night-court glow behind the play */
+.floodlight {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 80%;
+    height: 100%;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse at 50% 0%, rgba(217, 244, 65, 0.22), rgba(217, 244, 65, 0) 62%);
+    pointer-events: none;
+}
+
+.racket {
+    position: absolute;
+    bottom: 17%;
+    width: 15%;
+    height: auto;
+    color: var(--text-color);
+    transform-origin: 50% 96%;
+}
+
+.racket.left {
+    left: 5%;
+    animation: swing-left 5.2s ease-in-out infinite;
+}
+
+.racket.right {
+    right: 5%;
+    transform: scaleX(-1);
+    animation: swing-right 5.2s ease-in-out infinite;
+}
+
+.racket .frame {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+}
+
+.racket .strings {
+    stroke: currentColor;
+    stroke-width: 1;
+    opacity: 0.35;
+}
+
+.racket .grip {
+    stroke: currentColor;
+    stroke-width: 6;
+    stroke-linecap: round;
+}
+
+/* Ball position is split across three nested layers so each axis can have
+   its own timing: X drifts across the court, Y arcs, the inner ball spins
+   and squashes on contact. */
+.ball-x {
+    position: absolute;
+    left: 12%;
+    bottom: 21%;
+    width: 9%;
+    aspect-ratio: 1 / 1;
+    animation: travel 5.2s ease-in-out infinite;
+}
+
+.ball-y {
+    position: absolute;
+    inset: 0;
+    animation: arc 2.6s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+}
+
+.ball-spin {
+    position: absolute;
+    inset: 0;
+    animation: spin 1.1s linear infinite, squash 2.6s linear infinite;
+}
+
+.ball-spin svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: drop-shadow(0 0 14px rgba(217, 244, 65, 0.55));
+}
+
+.ball-shadow-x {
+    position: absolute;
+    left: 12%;
+    bottom: 19.5%;
+    width: 9%;
+    height: 2.5%;
+    animation: travel 5.2s ease-in-out infinite;
+}
+
+.ball-shadow {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(26, 26, 26, 0.35);
+    filter: blur(2px);
+    animation: shadow 2.6s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+}
+
+@keyframes travel {
+    0%   { transform: translateX(0); }
+    50%  { transform: translateX(calc(100% / 0.09 * 0.76)); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes arc {
+    0%   { transform: translateY(0); animation-timing-function: cubic-bezier(0.2, 0.6, 0.5, 1); }
+    50%  { transform: translateY(-330%); animation-timing-function: cubic-bezier(0.5, 0, 0.8, 0.4); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Contact squash: a quick flatten at the ends of each arc */
+@keyframes squash {
+    0%, 2%, 98%, 100% { scale: 1.18 0.86; }
+    6%, 94%           { scale: 1 1; }
+}
+
+@keyframes shadow {
+    0%   { transform: scale(1); opacity: 1; animation-timing-function: cubic-bezier(0.2, 0.6, 0.5, 1); }
+    50%  { transform: scale(0.5); opacity: 0.3; animation-timing-function: cubic-bezier(0.5, 0, 0.8, 0.4); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes swing-left {
+    0%, 100%   { transform: rotate(-10deg); }
+    3%         { transform: rotate(38deg); }
+    14%        { transform: rotate(-4deg); }
+    50%        { transform: rotate(-10deg); }
+    88%        { transform: rotate(-42deg); }
+    96%        { transform: rotate(-38deg); }
+}
+
+@keyframes swing-right {
+    0%, 100%   { transform: scaleX(-1) rotate(-10deg); }
+    38%        { transform: scaleX(-1) rotate(-42deg); }
+    46%        { transform: scaleX(-1) rotate(-38deg); }
+    50%        { transform: scaleX(-1) rotate(-10deg); }
+    53%        { transform: scaleX(-1) rotate(38deg); }
+    64%        { transform: scaleX(-1) rotate(-4deg); }
+}
+
+/* Tap or hover the court and the rally speeds up */
+.rally.fast .ball-x,
+.rally.fast .ball-shadow-x,
+.rally.fast .racket { animation-duration: 3.2s; }
+.rally.fast .ball-y,
+.rally.fast .ball-shadow { animation-duration: 1.6s; }
+.rally.fast .ball-spin { animation-duration: 0.6s, 1.6s; }
+
+.rally-hint {
+    position: absolute;
+    left: 50%;
+    bottom: 4%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
+.rally-hint .touch { display: none; }
+
+@media (hover: none) {
+    .rally-hint .mouse { display: none; }
+    .rally-hint .touch { display: inline; }
+}
+
+/* ---- Details strip ---- */
+.stat-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stat-strip .stat {
+    padding: 32px 24px;
+    border-left: 1px solid var(--border-color);
+}
+
+.stat-strip .stat:first-child {
+    border-left: none;
+    padding-left: 0;
+}
+
+.stat-number {
+    font-size: clamp(2rem, 3.4vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--accent-color);
+    text-wrap: balance;
+}
+
+.stat-label {
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.stat-sub {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ---- Cards ---- */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.card {
+    background: var(--surface-color);
+    padding: 32px 28px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card:hover {
+    border-color: var(--text-color);
+    transform: translateY(-4px);
+}
+
+.card-step {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--ball);
+    color: var(--text-color);
+    font-weight: 800;
+    font-size: 1rem;
+    margin-bottom: 24px;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.card p {
+    margin-bottom: 0;
+}
+
+/* Optional photo slot at the top of a card. Drop an <img> in and the
+   grey box gives way. */
+.card-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    margin: -32px -28px 24px;
+    width: calc(100% + 56px);
+    background: var(--border-color);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.card:hover .card-image {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* ---- When & where ---- */
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.detail-list {
+    list-style: none;
+    border-top: 1px solid var(--border-color);
+}
+
+.detail-list li {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.detail-list dt,
+.detail-list .k {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding-top: 4px;
+}
+
+.detail-list .v {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.detail-list .v small {
+    display: block;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* Big rounded photo/map slot beside the details */
+.media-slot {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: var(--night);
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 32px;
+    color: #fff;
+}
+
+.media-slot img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.media-slot .court-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--ball);
+}
+
+.media-slot .court-bg .line {
+    stroke: currentColor;
+    stroke-width: 0.9;
+    opacity: 0.55;
+    fill: none;
+}
+
+.media-slot::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 55%;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0));
+}
+
+.media-slot .caption {
+    position: relative;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    max-width: 18ch;
+    line-height: 1.25;
+}
+
+.media-slot .caption small {
+    display: block;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 8px;
+    letter-spacing: 0;
+}
+
+/* ---- FAQ ---- */
+.faq {
+    border-top: 1px solid var(--border-color);
+    max-width: 820px;
+}
+
+.faq details {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.faq summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 22px 48px 22px 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq summary::after {
+    content: "";
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--text-color);
+    transform: translateY(-70%) rotate(45deg);
+    transition: transform 0.25s ease;
+}
+
+.faq details[open] summary::after {
+    transform: translateY(-30%) rotate(-135deg);
+}
+
+.faq details p {
+    padding-bottom: 24px;
+    margin-bottom: 0;
+}
+
+/* ---- Night closing ---- */
+.night {
+    background: var(--night);
+    color: #fff;
+    padding: 110px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.night::before {
+    /* Floodlight from above */
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -20%;
+    width: 900px;
+    height: 600px;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse at 50% 0%, rgba(217, 244, 65, 0.18), rgba(217, 244, 65, 0) 60%);
+    pointer-events: none;
+}
+
+.night .container {
+    position: relative;
+    z-index: 1;
+}
+
+.night h2 {
+    color: #fff;
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+}
+
+.night p {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 1.1rem;
+}
+
+.night .btn-outline {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.night .btn-outline:hover {
+    background: #fff;
+    color: var(--text-color);
+    border-color: #fff;
+}
+
+.night .eyebrow {
+    color: var(--ball);
+}
+
+.night .eyebrow::before {
+    background: var(--ball);
+}
+
+/* ---- Footer ---- */
+footer {
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+footer p {
+    max-width: none;
+    margin-bottom: 0;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 28px;
+    list-style: none;
+    margin-bottom: 16px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+.skip-link {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 20000;
+    padding: 10px 16px;
+    border-radius: 100px;
+    background: var(--text-color);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transform: translateY(-200%);
+    transition: transform 0.2s;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+    color: white;
+}
+
+/* ---- Scroll reveal ---- */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.stagger > .reveal:nth-child(2) { transition-delay: 0.08s; }
+.stagger > .reveal:nth-child(3) { transition-delay: 0.16s; }
+.stagger > .reveal:nth-child(4) { transition-delay: 0.24s; }
+
+/* ---- Mobile ---- */
+@media (max-width: 900px) {
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .media-slot {
+        aspect-ratio: 16 / 10;
+    }
+
+    .stat-strip {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat-strip .stat {
+        padding: 24px 20px;
+    }
+
+    .stat-strip .stat:nth-child(odd) {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .stat-strip .stat:nth-child(n + 3) {
+        border-top: 1px solid var(--border-color);
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .mobile-menu.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fafafa;
+        z-index: 0;
+    }
+
+    .mobile-menu-links {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 40px;
+        list-style: none;
+    }
+
+    .mobile-menu-links a {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--text-color);
+    }
+
+    .mobile-menu-close {
+        position: absolute;
+        top: 20px;
+        right: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 10001;
+        color: var(--text-color);
+    }
+
+    .hero {
+        padding-top: 96px;
+        padding-bottom: 40px;
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions,
+    .hero-meta {
+        justify-content: center;
+    }
+
+    .hero-text .eyebrow {
+        justify-content: center;
+    }
+
+    .hero-text .eyebrow::before {
+        display: none;
+    }
+
+    .rally {
+        max-width: 420px;
+        margin: 0 auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .ball-x { bottom: 26%; }
+    .ball-shadow-x { bottom: 24.5%; }
+    .racket { bottom: 22%; width: 13%; }
+    .racket.left { left: 9%; }
+    .racket.right { right: 9%; }
+
+    @keyframes arc {
+        0%   { transform: translateY(0); animation-timing-function: cubic-bezier(0.2, 0.6, 0.5, 1); }
+        50%  { transform: translateY(-220%); animation-timing-function: cubic-bezier(0.5, 0, 0.8, 0.4); }
+        100% { transform: translateY(0); }
+    }
+
+    section {
+        padding: 64px 0;
+    }
+
+    .night {
+        padding: 80px 0;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .detail-list li {
+        grid-template-columns: 96px 1fr;
+        gap: 16px;
+    }
+
+    .footer-links {
+        gap: 8px 18px;
+    }
+}
+
+/* ---- Reduced motion: the rally holds a still frame mid-flight ---- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .ball-x,
+    .ball-y,
+    .ball-spin,
+    .ball-shadow-x,
+    .ball-shadow,
+    .racket {
+        animation: none !important;
+    }
+
+    .ball-x,
+    .ball-shadow-x {
+        transform: translateX(calc(100% / 0.09 * 0.38));
+    }
+
+    .ball-y {
+        transform: translateY(-300%);
+    }
+
+    .ball-shadow {
+        transform: scale(0.6);
+        opacity: 0.4;
+    }
+
+    .rally-hint {
+        display: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .card,
+    .btn {
+        transition: none;
+    }
+}

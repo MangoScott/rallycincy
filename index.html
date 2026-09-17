@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Rally Cincy | Weekly Night Tennis in Cincinnati</title>
+    <meta name="description"
+        content="A free weekly night tennis rally in Cincinnati. Run club energy, tennis court. Every level welcome, no partner needed. Show up, hit, hang out.">
+    <meta name="theme-color" content="#fafafa">
+
+    <!--
+        EDIT ME: the details that change most often live in a few spots.
+          - Day / time / meeting point: the hero meta line, the details strip, and the "When & where" list
+          - Instagram + sign-up links: every href containing "instagram.com" or "mailto:"
+          - Canonical URL / og:url / og:image: set these once the domain is live
+    -->
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Let's Rally Cincy | Weekly Night Tennis in Cincinnati">
+    <meta property="og:description"
+        content="Run club energy, tennis court. A free weekly night rally in Cincinnati. Every level welcome, no partner needed.">
+    <meta property="og:image" content="images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Let's Rally Cincy. Weekly night tennis in Cincinnati.">
+    <meta property="og:site_name" content="Let's Rally Cincy">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Let's Rally Cincy | Weekly Night Tennis in Cincinnati">
+    <meta name="twitter:description"
+        content="Run club energy, tennis court. A free weekly night rally in Cincinnati. Every level welcome, no partner needed.">
+    <meta name="twitter:image" content="images/og-image.png">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SportsClub",
+        "name": "Let's Rally Cincy",
+        "description": "A free weekly night tennis rally in Cincinnati. Every level welcome, no partner needed.",
+        "sport": "Tennis",
+        "areaServed": { "@type": "City", "name": "Cincinnati" },
+        "isAccessibleForFree": true
+    }
+    </script>
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header>
+        <nav class="container">
+            <a href="#" class="logo" aria-label="Let's Rally Cincy, home">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+                    <defs>
+                        <radialGradient id="glow-nav" cx="36%" cy="32%" r="72%">
+                            <stop offset="0" stop-color="#EAFF6B" />
+                            <stop offset="0.6" stop-color="#D9F441" />
+                            <stop offset="1" stop-color="#A9C41E" />
+                        </radialGradient>
+                    </defs>
+                    <circle cx="32" cy="32" r="28" fill="url(#glow-nav)" />
+                    <path d="M10.5 18.5 C 25 26, 25 38, 10.5 45.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" />
+                    <path d="M53.5 18.5 C 39 26, 39 38, 53.5 45.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" />
+                </svg>
+                <span>LET'S RALLY <span class="logo-cincy">CINCY</span></span>
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#how">How it works</a></li>
+                <li><a href="#when">When &amp; where</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#join" class="btn btn-ball">Join the rally</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-bg"></div>
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <ul class="mobile-menu-links">
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#when">When &amp; where</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#join">Join the rally</a></li>
+        </ul>
+    </div>
+
+    <main id="main">
+        <!-- ===== Hero ===== -->
+        <section class="hero" id="top">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="eyebrow">Cincinnati · Weekly night tennis</div>
+                        <h1>Run club energy. <span class="hl">Tennis court.</span></h1>
+                        <p>
+                            A free weekly night rally for anyone with a racket. Every level, no partner needed.
+                            Show up, hit for an hour, then hang out.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#join" class="btn btn-primary">Join the next rally</a>
+                            <a href="#how" class="btn btn-outline">How it works</a>
+                        </div>
+                        <div class="hero-meta" aria-label="Quick details">
+                            <span>Thursday nights</span>
+                            <span>7:30 PM</span>
+                            <span>Always free</span>
+                        </div>
+                    </div>
+
+                    <!-- The rally animation. Decorative: everything inside is hidden from screen readers. -->
+                    <div class="rally" id="rally" aria-hidden="true">
+                        <div class="floodlight"></div>
+                        <svg class="court" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <!-- Court floor and lines, drawn flat so the ball has a stage -->
+                            <line class="floor" x1="0" y1="80.5" x2="100" y2="80.5" />
+                            <line class="line" x1="0" y1="86" x2="100" y2="86" />
+                            <line class="line" x1="0" y1="92" x2="100" y2="92" />
+                            <line class="line" x1="8" y1="80.5" x2="4" y2="100" />
+                            <line class="line" x1="92" y1="80.5" x2="96" y2="100" />
+                            <line class="line" x1="28" y1="80.5" x2="26" y2="100" />
+                            <line class="line" x1="72" y1="80.5" x2="74" y2="100" />
+                            <!-- Net -->
+                            <line class="net" x1="50" y1="63" x2="50" y2="80.5" />
+                            <line class="net-post" x1="50" y1="62.5" x2="50" y2="64" />
+                        </svg>
+
+                        <svg class="racket left" viewBox="0 0 60 130" aria-hidden="true">
+                            <ellipse class="frame" cx="30" cy="34" rx="24" ry="32" />
+                            <g class="strings">
+                                <line x1="18" y1="10" x2="18" y2="60" /><line x1="30" y1="3" x2="30" y2="66" /><line x1="42" y1="10" x2="42" y2="60" />
+                                <line x1="8" y1="24" x2="52" y2="24" /><line x1="6" y1="36" x2="54" y2="36" /><line x1="8" y1="48" x2="52" y2="48" />
+                            </g>
+                            <line class="grip" x1="30" y1="66" x2="30" y2="124" />
+                        </svg>
+
+                        <svg class="racket right" viewBox="0 0 60 130" aria-hidden="true">
+                            <ellipse class="frame" cx="30" cy="34" rx="24" ry="32" />
+                            <g class="strings">
+                                <line x1="18" y1="10" x2="18" y2="60" /><line x1="30" y1="3" x2="30" y2="66" /><line x1="42" y1="10" x2="42" y2="60" />
+                                <line x1="8" y1="24" x2="52" y2="24" /><line x1="6" y1="36" x2="54" y2="36" /><line x1="8" y1="48" x2="52" y2="48" />
+                            </g>
+                            <line class="grip" x1="30" y1="66" x2="30" y2="124" />
+                        </svg>
+
+                        <div class="ball-shadow-x"><div class="ball-shadow"></div></div>
+                        <div class="ball-x">
+                            <div class="ball-y">
+                                <div class="ball-spin">
+                                    <svg viewBox="0 0 64 64">
+                                        <defs>
+                                            <radialGradient id="glow-ball" cx="36%" cy="32%" r="72%">
+                                                <stop offset="0" stop-color="#EAFF6B" />
+                                                <stop offset="0.6" stop-color="#D9F441" />
+                                                <stop offset="1" stop-color="#A9C41E" />
+                                            </radialGradient>
+                                        </defs>
+                                        <circle cx="32" cy="32" r="28" fill="url(#glow-ball)" />
+                                        <path d="M10.5 18.5 C 25 26, 25 38, 10.5 45.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" />
+                                        <path d="M53.5 18.5 C 39 26, 39 38, 53.5 45.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rally-hint"><span class="mouse">Hover to pick up the pace</span><span class="touch">Tap to pick up the pace</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Details strip ===== -->
+        <div class="container">
+            <div class="stat-strip reveal">
+                <div class="stat">
+                    <div class="stat-number">Thursdays</div>
+                    <div class="stat-label">Every week</div>
+                    <div class="stat-sub">Rain or shine, we call it by 5 PM</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">7:30 PM</div>
+                    <div class="stat-label">Under the lights</div>
+                    <div class="stat-sub">About 90 minutes of hitting</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">Free</div>
+                    <div class="stat-label">Always</div>
+                    <div class="stat-sub">Bring a racket, we bring the balls</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">All levels</div>
+                    <div class="stat-label">Seriously</div>
+                    <div class="stat-sub">First rally ever to college player</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== How it works ===== -->
+        <section id="how">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>How it works</h2>
+                    <a href="#join" class="section-link">Join the next one &rarr;</a>
+                </div>
+                <div class="grid-3 stagger" style="margin-top: 40px;">
+                    <div class="card reveal">
+                        <div class="card-step">1</div>
+                        <h3>Show up</h3>
+                        <p>No sign-ups, no fees, no partner required. Bring a racket and whatever shoes you have. We
+                            meet at the courts a few minutes before 7:30 and say hi.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-step">2</div>
+                        <h3>Rally &amp; rotate</h3>
+                        <p>We split into groups by level and hit. Every 15 minutes or so we rotate, so you play with
+                            everyone. Points if you want them, rallies if you don't.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-step">3</div>
+                        <h3>Hang after</h3>
+                        <p>The rally is the excuse. Afterward we grab a drink or a bite nearby. That part is optional,
+                            but it's where the friends get made.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== When & where ===== -->
+        <section id="when" style="padding-top: 0;">
+            <div class="container">
+                <div class="split">
+                    <div class="reveal">
+                        <div class="eyebrow">When &amp; where</div>
+                        <h2>Thursday nights, under the lights.</h2>
+                        <p>
+                            We rotate between lit public courts around Cincinnati so nobody drives across town every
+                            week. The exact courts for the week are posted on Instagram every Monday.
+                        </p>
+                        <ul class="detail-list" style="margin-top: 32px;">
+                            <li>
+                                <span class="k">Day</span>
+                                <span class="v">Every Thursday<small>Holiday weeks are announced on Instagram</small></span>
+                            </li>
+                            <li>
+                                <span class="k">Time</span>
+                                <span class="v">7:30 PM to about 9:00 PM<small>Show up late, leave early, all good</small></span>
+                            </li>
+                            <li>
+                                <span class="k">Where</span>
+                                <span class="v">Lit public courts around Cincy<small>This week's courts drop Monday on Instagram</small></span>
+                            </li>
+                            <li>
+                                <span class="k">Bring</span>
+                                <span class="v">A racket and water<small>Balls are on us. Need a loaner racket? Just ask.</small></span>
+                            </li>
+                            <li>
+                                <span class="k">Cost</span>
+                                <span class="v">Free<small>Always has been, always will be</small></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Photo slot: replace the SVG with <img src="images/courts.jpg" alt="..."> once you have a shot -->
+                    <div class="media-slot reveal">
+                        <svg class="court-bg" viewBox="0 0 100 125" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                            <rect class="line" x="12" y="12" width="76" height="101" />
+                            <rect class="line" x="20" y="12" width="60" height="101" />
+                            <line class="line" x1="12" y1="62.5" x2="88" y2="62.5" stroke-width="3" />
+                            <line class="line" x1="20" y1="36" x2="80" y2="36" />
+                            <line class="line" x1="20" y1="89" x2="80" y2="89" />
+                            <line class="line" x1="50" y1="36" x2="50" y2="89" />
+                        </svg>
+                        <div class="caption">
+                            The courts change. The night doesn't.
+                            <small>Follow along for this week's spot.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ ===== -->
+        <section id="faq" style="background: var(--surface-color);">
+            <div class="container">
+                <div class="reveal">
+                    <div class="eyebrow">Good to know</div>
+                    <h2>Questions people ask</h2>
+                </div>
+                <div class="faq reveal">
+                    <details>
+                        <summary>I haven't played in years. Is that okay?</summary>
+                        <p>Yes. Rusty is the default. We group by level so you'll be hitting with people who are
+                            also finding their swing. Nobody keeps score unless both of you want to.</p>
+                    </details>
+                    <details>
+                        <summary>Do I need a partner?</summary>
+                        <p>No. Most people come alone the first time. We rotate through the night, so you'll hit with
+                            a bunch of different people before it's over.</p>
+                    </details>
+                    <details>
+                        <summary>What does it cost?</summary>
+                        <p>Nothing. The courts are public, the balls are covered, and the company is free. If you want
+                            to chip in for balls down the line, we'll never say no, but it's never expected.</p>
+                    </details>
+                    <details>
+                        <summary>What if it rains?</summary>
+                        <p>We call it by 5 PM on Instagram. Light drizzle we usually play through. Wet courts we
+                            don't, because sliding into the net is not the vibe.</p>
+                    </details>
+                    <details>
+                        <summary>I don't have a racket.</summary>
+                        <p>Come anyway. We keep a few loaners in the bag. Message ahead if you can so we make sure one
+                            is there for you.</p>
+                    </details>
+                    <details>
+                        <summary>Can I bring a friend?</summary>
+                        <p>Please do. The whole thing runs on people bringing people.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Join ===== -->
+        <section class="night" id="join">
+            <div class="container">
+                <div style="max-width: 760px;">
+                    <div class="eyebrow">Join the rally</div>
+                    <h2>See you under the lights.</h2>
+                    <p>
+                        Follow along for this week's courts and rain calls, or send a note if you have a question,
+                        a court to suggest, or a friend who needs convincing.
+                    </p>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 32px;">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn btn-ball">Follow on Instagram</a>
+                        <a href="mailto:scott@finmango.org?subject=Let%27s%20Rally%20Cincy" class="btn btn-outline">Send a note</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="#how">How it works</a></li>
+                <li><a href="#when">When &amp; where</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+            <p>© <span id="year">2026</span> Let's Rally Cincy · Made in Cincinnati</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

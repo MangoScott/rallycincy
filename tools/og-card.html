@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body { font-family: Inter, sans-serif; background: #0F172A; color: #fff; position: relative; }
+  .glow { position: absolute; left: 50%; top: -30%; width: 1400px; height: 800px; transform: translateX(-50%);
+          background: radial-gradient(ellipse at 50% 0%, rgba(217,244,65,0.22), rgba(217,244,65,0) 60%); }
+  .court { position: absolute; right: -140px; top: -40px; width: 620px; height: 760px; }
+  .court rect, .court line { stroke: #D9F441; fill: none; stroke-width: 0.5; opacity: 0.45; }
+  .wrap { position: absolute; left: 80px; top: 92px; }
+  .mark { display: flex; align-items: center; gap: 22px; margin-bottom: 64px; }
+  .mark svg { width: 72px; height: 72px; }
+  .mark span { font-weight: 800; font-size: 26px; letter-spacing: 0.06em; }
+  .mark span b { color: #D9F441; font-weight: 800; }
+  h1 { font-size: 84px; font-weight: 800; line-height: 1.02; letter-spacing: -0.03em; margin: 0 0 32px; max-width: 760px; }
+  h1 .hl { background: linear-gradient(transparent 60%, #D9F441 60%, #D9F441 92%, transparent 92%); color: #fff; padding: 0 6px; margin: 0 -6px; }
+  p { font-size: 28px; font-weight: 500; color: rgba(255,255,255,0.72); margin: 0; }
+  .ball { position: absolute; right: 130px; top: 190px; width: 230px; height: 230px; filter: drop-shadow(0 0 40px rgba(217,244,65,0.5)); }
+  .shadow { position: absolute; right: 150px; top: 540px; width: 190px; height: 26px; border-radius: 50%; background: rgba(0,0,0,0.55); filter: blur(8px); }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <svg class="court" viewBox="0 0 100 125" aria-hidden="true">
+    <rect x="12" y="12" width="76" height="101" />
+    <rect x="20" y="12" width="60" height="101" />
+    <line x1="12" y1="62.5" x2="88" y2="62.5" stroke-width="1.2" />
+    <line x1="20" y1="36" x2="80" y2="36" />
+    <line x1="20" y1="89" x2="80" y2="89" />
+    <line x1="50" y1="36" x2="50" y2="89" />
+  </svg>
+  <div class="shadow"></div>
+  <svg class="ball" viewBox="0 0 64 64">
+    <defs><radialGradient id="g" cx="36%" cy="32%" r="72%"><stop offset="0" stop-color="#EAFF6B"/><stop offset="0.6" stop-color="#D9F441"/><stop offset="1" stop-color="#A9C41E"/></radialGradient></defs>
+    <circle cx="32" cy="32" r="28" fill="url(#g)"/>
+    <path d="M10.5 18.5 C 25 26, 25 38, 10.5 45.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/>
+    <path d="M53.5 18.5 C 39 26, 39 38, 53.5 45.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/>
+  </svg>
+  <div class="wrap">
+    <div class="mark">
+      <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="#D9F441"/><path d="M10.5 18.5 C 25 26, 25 38, 10.5 45.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/><path d="M53.5 18.5 C 39 26, 39 38, 53.5 45.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/></svg>
+      <span>LET'S RALLY <b>CINCY</b></span>
+    </div>
+    <h1>Run club energy.<br><span class="hl">Tennis court.</span></h1>
+    <p>Free weekly night tennis in Cincinnati. Every level welcome.</p>
+  </div>
+</body>
+</html>
